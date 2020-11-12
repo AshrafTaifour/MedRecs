@@ -1,0 +1,59 @@
+﻿INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201101 09:30:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201101 10:00:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201101 10:30:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201101 11:00:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201101 11:30:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201101 12:00:00 PM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201102 09:00:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201102 09:30:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201102 10:00:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201102 10:30:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201102 11:00:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201102 11:30:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201102 12:00:00 PM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201103 09:00:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201103 09:30:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201103 10:00:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201103 10:30:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201103 11:00:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201103 11:30:00 AM'));
+
+INSERT INTO APPOINTMENT(time)
+VALUES (convert(datetime, '20201103 12:00:00 PM'));
