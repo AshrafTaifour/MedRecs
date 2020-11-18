@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LoginPageTest;
 
 namespace MedRecs
 {
@@ -19,9 +20,19 @@ namespace MedRecs
     /// </summary>
     public partial class Dashboard : Window
     {
-        public Dashboard()
+        private HEALTHCARE_PERSONNEL user;
+        public Dashboard(HEALTHCARE_PERSONNEL user)
         {
             InitializeComponent();
+            this.user = user;
+            username.Content = this.user.email;
+            date.Content = DateTime.Today;
         }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

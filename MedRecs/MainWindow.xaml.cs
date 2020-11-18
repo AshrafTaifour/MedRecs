@@ -81,7 +81,16 @@ namespace MedRecs
             //password passed all checks, is a valid password
             var userData = new HEALTHCARE_PERSONNEL();
             if (userData.Login(strUsername, strPassword) == true)
+            {
                 MessageBox.Show("You are logged in as User #" + userData.empid);
+                this.Hide();
+                nameTextBox.Clear();
+                passwordTextBox.Clear();
+                Dashboard dash = new Dashboard(userData);
+                dash.Owner = this;
+                dash.ShowDialog();
+                this.Show();
+            }
             else
                 MessageBox.Show("You could not be verified. Please try again.");
         }
