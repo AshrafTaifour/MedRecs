@@ -1,0 +1,45 @@
+﻿<Window x:Class="MedRecs.ModifyPatient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedRecs"
+        mc:Ignorable="d"
+        Title="ModifyPatient" Height="483.379" Width="636.143">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140*"/>
+            <ColumnDefinition Width="489*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46"/>
+            <RowDefinition Height="46"/>
+            <RowDefinition Height="46"/>
+            <RowDefinition Height="46"/>
+            <RowDefinition Height="46"/>
+            <RowDefinition Height="46"/>
+            <RowDefinition Height="46"/>
+            <RowDefinition Height="46"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="First Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="1" Height="26" Width="70"/>
+        <Label Content="Patient ID:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="26" Width="64"/>
+        <Label Content="Middle Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="2" Height="26" Width="93"/>
+        <Label Content="Last Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="3" Height="26" Width="93"/>
+        <Label Content="Registration Number:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="4" Height="26" Width="131" Grid.ColumnSpan="2"/>
+        <Label Content="Policy Number:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="5" Height="26" Width="131" Grid.ColumnSpan="2"/>
+        <Label Content="Phone Number:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="6" Height="26" Width="131" Grid.ColumnSpan="2"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="7" Height="26" Width="48"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Height="27" Margin="364,26,0,0" Grid.Row="8" VerticalAlignment="Top" Width="113" Grid.Column="1" Click="Cancel_Click"/>
+        <Button Content="Save" HorizontalAlignment="Left" Height="27" Margin="231,26,0,0" Grid.Row="8" VerticalAlignment="Top" Width="113" Grid.Column="1" Click="Save_Click"/>
+        <TextBox Name="patientIDBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="467"/>
+        <TextBox Name="firstNameBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="467" Grid.Row="1"/>
+        <TextBox Name="middleNameBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="467" Grid.Row="2"/>
+        <TextBox Name="lastNameBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="467" Grid.Row="3"/>
+        <TextBox Name="registrationNumberBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="467" Grid.Row="4"/>
+        <TextBox Name="policyNumberBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="467" Grid.Row="5"/>
+        <TextBox Name="phoneNumberBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="467" Grid.Row="6"/>
+        <TextBox Name="emailBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="467" Grid.Row="7"/>
+
+    </Grid>
+</Window>

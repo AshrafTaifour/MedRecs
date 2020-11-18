@@ -33,7 +33,7 @@ namespace MedRecs
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-            SearchAppointment searchApp = new SearchAppointment();
+            AppointmentSearch searchApp = new AppointmentSearch();
             searchApp.Owner = this;
             searchApp.ShowDialog();
         }

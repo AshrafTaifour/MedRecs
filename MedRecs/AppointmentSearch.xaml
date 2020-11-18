@@ -1,0 +1,24 @@
+﻿<Window x:Class="MedRecs.AppointmentSearch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedRecs"
+        mc:Ignorable="d"
+        Title="Appointment Search" Height="291.605" Width="400.068">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="140*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Date" HorizontalAlignment="Left" Height="36" Margin="10,10,0,0" VerticalAlignment="Top" Width="52"/>
+        <Label Content="AND / OR " HorizontalAlignment="Left" Height="32" Margin="147,15.333,0,0" Grid.Row="1" VerticalAlignment="Top" Width="64" RenderTransformOrigin="1.244,0.604"/>
+        <DatePicker HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="373"/>
+        <Label Content="Patient Registration Number:" HorizontalAlignment="Left" Height="36" Margin="10,10,0,0" VerticalAlignment="Top" Width="188" Grid.Row="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,40,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="373"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Height="27" Margin="269,92,0,0" Grid.Row="2" VerticalAlignment="Top" Width="114" Click="Cancel_Click"/>
+        <Button Content="Search" HorizontalAlignment="Left" Height="27" Margin="134,92,0,0" Grid.Row="2" VerticalAlignment="Top" Width="114" Click="Search_Click"/>
+
+    </Grid>
+</Window>

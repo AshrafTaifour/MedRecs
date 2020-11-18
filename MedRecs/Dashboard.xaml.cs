@@ -58,6 +58,17 @@ namespace MedRecs
         {
             date.Content = DateTime.Now;
         }
-        
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            //This will delete the selected appointment from the appointment table
+        }
+
+        private void Patients_Click(object sender, RoutedEventArgs e)
+        {
+            PatientWindow pw = new PatientWindow();
+            pw.Owner = this;
+            pw.ShowDialog();
+        }
     }
 }

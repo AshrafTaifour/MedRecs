@@ -1,9 +1,8 @@
 ﻿<Window x:Class="MedRecs.Dashboard"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MedRecs"
         mc:Ignorable="d"
         Title="Dashboard" Height="461.932" Width="800">
     <Grid>
@@ -11,22 +10,23 @@
             <RowDefinition Height="106"/>
             <RowDefinition Height="87.333"/>
             <RowDefinition Height="84.667"/>
-            <RowDefinition Height="90.667"/>
-            <RowDefinition Height="55.333"/>
+            <RowDefinition Height="65.333"/>
+            <RowDefinition Height="87.333"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="206*"/>
             <ColumnDefinition Width="587*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Appointments" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="184" Margin="10,10,0,0" Grid.Row="1" Click="AppButton_Click"/>
-        <Button Content="Patients" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="184" Margin="10,7.667,0,0" Grid.Row="2"/>
-        <Button Content="Staff" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="184" Margin="10,13,0,0" Grid.Row="3"/>
-        <Button Content="Logout" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="184" Margin="10,10.333,0,0" Grid.Row="4" Click="LogOut_Click"/>
-        <DataGrid x:Name="Appointments" Grid.Column="1" HorizontalAlignment="Left" Height="367" Margin="10,50,0,0" Grid.RowSpan="5" VerticalAlignment="Top" Width="567"/>
+        <Button Content="Appointments" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="184" Margin="10,10.333,0,0" Grid.Row="1" Click="AppButton_Click"/>
+        <Button Content="Patients" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="184" Margin="10,10.333,0,0" Grid.Row="2" Click="Patients_Click"/>
+        <Button Content="Logout" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="184" Margin="12,14.667,0,0" Grid.Row="4" Click="LogOut_Click"/>
+        <DataGrid x:Name="AppointmentsDataGrid" Grid.Column="1" HorizontalAlignment="Left" Height="295" Margin="10,50,0,0" Grid.RowSpan="4" VerticalAlignment="Top" Width="567">
+        </DataGrid>
         <Label Content="Today's Appointments" Grid.Column="1" HorizontalAlignment="Left" Height="35" Margin="184,10,0,0" VerticalAlignment="Top" Width="205" FontSize="18" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="10,37,0,0" TextWrapping="Wrap" Text="Logged in: " VerticalAlignment="Top" Width="84"/>
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="10,70,0,0" TextWrapping="Wrap" Text="Today's Date: " VerticalAlignment="Top" Width="84"/>
         <Label Name="username" Content="" HorizontalAlignment="Left" Height="26" Margin="63,32,0,0" VerticalAlignment="Top" Width="128"/>
         <Label Name="date" Content="" HorizontalAlignment="Left" Height="26" Margin="77,65,0,0" VerticalAlignment="Top" Width="128"/>
+        <Button Content="Delete Appointment" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="184" Margin="393,14.667,0,0" Grid.Row="4" Click="Delete_Click" Grid.Column="1"/>
     </Grid>
 </Window>

@@ -54,6 +54,7 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,14 +74,43 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="SearchAppointment.xaml.cs">
-      <DependentUpon>SearchAppointment.xaml</DependentUpon>
+    <Compile Include="AppointmentSearch.xaml.cs">
+      <DependentUpon>AppointmentSearch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateNewPatient.xaml.cs">
+      <DependentUpon>CreateNewPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyPatient.xaml.cs">
+      <DependentUpon>ModifyPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientManager.xaml.cs">
+      <DependentUpon>PatientManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientResults.xaml.cs">
+      <DependentUpon>PatientResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientSearch.xaml.cs">
+      <DependentUpon>PatientSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientWindow.xaml.cs">
+      <DependentUpon>PatientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhysicianSearch.xaml.cs">
+      <DependentUpon>PhysicianSearch.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AppointmentSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AppointmentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CreateAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateNewPatient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -109,7 +139,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SearchAppointment.xaml">
+    <Page Include="ModifyPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientResults.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhysicianSearch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,6 +216,9 @@
       <Project>{64178020-67c3-4454-85e6-6517fb01aa95}</Project>
       <Name>LoginPageTest</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

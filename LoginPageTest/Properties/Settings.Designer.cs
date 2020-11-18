@@ -26,8 +26,9 @@ namespace LoginPageTest.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Ashraf\\source\\repos\\" +
-            "MedRecs\\MedRecs\\MedicalDatabase.mdf;Integrated Security=True;Connect Timeout=30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Mohamad\\source\\repos" +
+            "\\AshrafTaifour\\MedRecs\\MedRecs\\MedicalDatabase.mdf;Integrated Security=True;Conn" +
+            "ect Timeout=30")]
         public string MedicalDatabaseConnection {
             get {
                 return ((string)(this["MedicalDatabaseConnection"]));
