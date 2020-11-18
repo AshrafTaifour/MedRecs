@@ -7,17 +7,17 @@ namespace LoginPageTest
     {
         public int empid { set; get; }
 
-        public string fname { set; get; }
+        public string email { set; get; }
 
         public string Password { set; get; }
 
-        public Boolean Login(string firstName, string password)
+        public Boolean Login(string ElectronicMail, string password)
         {
             var dbUser = new HCUserInfo();
-            empid = dbUser.Login(firstName, password);
+            empid = dbUser.Login(ElectronicMail, password);
             if (empid > 0)
             {
-                fname = firstName;
+                this.email = ElectronicMail;
                 Password = password;
                 return true;
             }

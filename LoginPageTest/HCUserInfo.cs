@@ -10,7 +10,7 @@ namespace LoginPageTest
 {
     internal class HCUserInfo
     {
-        public int Login(string fname, string Password)
+        public int Login(string email, string Password)
         {
             var conn = new SqlConnection(Properties.Settings.Default.MedicalDatabaseConnection);
             try
@@ -18,8 +18,8 @@ namespace LoginPageTest
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandText = "Select empid from HEALTHCARE_PERSONNEL where "
-                    + " fname = @fname and Password = @Password ";
-                cmd.Parameters.AddWithValue("@fname", fname);
+                    + " email = @email and Password = @Password ";
+                cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@Password", Password);
                 conn.Open();
                 int userId = (int)cmd.ExecuteScalar();

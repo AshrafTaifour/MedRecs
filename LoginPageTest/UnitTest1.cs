@@ -7,14 +7,14 @@ namespace LoginPageTest
     public class UnitTest1 //to test if HEALTHCAREPERSONNEL can login
     {
         HEALTHCARE_PERSONNEL userData = new HEALTHCARE_PERSONNEL();
-        string inputName, inputPassword;
+        string inputEmail, inputPassword;
         int actualUserId;
 
         [TestMethod]
         public void TestMethod1()
         {
             //declare value of test inputs
-            inputName = "John"; //inputname is fname
+            inputEmail = "jd@gmail.com"; //inputname is email
             inputPassword = "jd123456";
 
             //specify value of expected outputs
@@ -22,7 +22,7 @@ namespace LoginPageTest
             int expectedUserId = 1;
 
             //call method to obtain actual outputs
-            Boolean actualReturn = userData.Login(inputName, inputPassword);
+            Boolean actualReturn = userData.Login(inputEmail, inputPassword);
             actualUserId = userData.empid;
             //verify the result:
             Assert.AreEqual(expectedReturn, actualReturn);
