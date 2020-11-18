@@ -24,8 +24,11 @@ namespace MedRecs
     {
         private HEALTHCARE_PERSONNEL user { set; get; }
 
+<<<<<<< Updated upstream
         //private 
 
+=======
+>>>>>>> Stashed changes
         public Dashboard(HEALTHCARE_PERSONNEL user)
         {
             InitializeComponent();
@@ -40,21 +43,42 @@ namespace MedRecs
             this.Close();
         }
 
+<<<<<<< Updated upstream
+=======
+        private void AppButton_Click(object sender, RoutedEventArgs e)
+        {
+            AppointmentWindow appwindow = new AppointmentWindow();
+            appwindow.Owner = this;
+            appwindow.ShowDialog();
+        }
+
+>>>>>>> Stashed changes
         private void Dashboard_Load()
         {
             Timer timer = new Timer();
             timer.Interval = (10 * 1000); // 10 secs
+<<<<<<< Updated upstream
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
         }
 
 
         private void timer_Tick(object sender, EventArgs e)
+=======
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+>>>>>>> Stashed changes
         {
             date.Content = DateTime.Now;
         }
         
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
     }
 }

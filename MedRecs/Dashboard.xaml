@@ -18,7 +18,7 @@
             <ColumnDefinition Width="206*"/>
             <ColumnDefinition Width="587*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Appointments" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="184" Margin="10,10,0,0" Grid.Row="1"/>
+        <Button Content="Appointments" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="184" Margin="10,10,0,0" Grid.Row="1" Click="AppButton_Click"/>
         <Button Content="Patients" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="184" Margin="10,7.667,0,0" Grid.Row="2"/>
         <Button Content="Staff" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="184" Margin="10,13,0,0" Grid.Row="3"/>
         <Button Content="Logout" HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="184" Margin="10,10.333,0,0" Grid.Row="4" Click="LogOut_Click"/>
