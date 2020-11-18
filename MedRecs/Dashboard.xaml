@@ -27,6 +27,6 @@
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="10,37,0,0" TextWrapping="Wrap" Text="Logged in: " VerticalAlignment="Top" Width="84"/>
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="10,70,0,0" TextWrapping="Wrap" Text="Today's Date: " VerticalAlignment="Top" Width="84"/>
         <Label Name="username" Content="" HorizontalAlignment="Left" Height="26" Margin="63,32,0,0" VerticalAlignment="Top" Width="128"/>
-        <Label x:Name="date" Content="" HorizontalAlignment="Left" Height="26" Margin="77,65,0,0" VerticalAlignment="Top" Width="128"/>
+        <Label Name="date" Content="" HorizontalAlignment="Left" Height="26" Margin="77,65,0,0" VerticalAlignment="Top" Width="128"/>
     </Grid>
 </Window>
