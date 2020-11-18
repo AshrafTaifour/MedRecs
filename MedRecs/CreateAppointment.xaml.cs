@@ -29,7 +29,7 @@ namespace MedRecs
 
         }
 
-        private void SearchPatient_Click(object sender, RoutedEventArgs e)
+        private void Patient_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -43,5 +43,6 @@ namespace MedRecs
         {
             this.Close();
         }
+
     }
 }

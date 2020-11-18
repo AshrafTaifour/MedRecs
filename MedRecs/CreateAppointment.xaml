@@ -23,12 +23,12 @@
         <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="10,10.333,0,0" Grid.Row="2" VerticalAlignment="Top" Height="25" Width="332"/>
         <Label Content="Date:" HorizontalAlignment="Left" Margin="10,8.333,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="37"/>
         <Label Content="Time:" HorizontalAlignment="Left" Margin="10,10.333,0,0" Grid.Row="3" VerticalAlignment="Top" Height="26" Width="39"/>
-        <Button Content="Create" HorizontalAlignment="Left" Height="29" Margin="85,14.333,0,0" Grid.Row="4" VerticalAlignment="Top" Width="117" Click="Create_Click" Grid.Column="1"/>
+        <Button Content="Create" HorizontalAlignment="Left" Height="29" Margin="85,14.333,0,0" Grid.Row="4" VerticalAlignment="Top" Width="117" Click="CreateButton_Click" Grid.Column="1"/>
         <Button Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="225,14.333,0,0" Grid.Row="4" VerticalAlignment="Top" Width="117" Click="Cancel_Click"/>
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,12,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="10,9.667,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192" Grid.Row="1"/>
-        <Button Content="Search" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="217,12,0,0" VerticalAlignment="Top" Width="125" Click="Button_Click_1"/>
-        <Button Content="Search" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="217,12.667,0,0" VerticalAlignment="Top" Width="125" Click="Button_Click_1" Grid.Row="1"/>
+        <Button Content="Search" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="217,12,0,0" VerticalAlignment="Top" Width="125" Click="Patient_Click"/>
+        <Button Content="Search" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="217,12.667,0,0" VerticalAlignment="Top" Width="125" Click="Physician_Click" Grid.Row="1"/>
         <Menu Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="10,9.667,0,0" Grid.Row="3" VerticalAlignment="Top" Width="332"/>
     </Grid>
 </Window>
