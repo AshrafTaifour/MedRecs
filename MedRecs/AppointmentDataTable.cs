@@ -13,25 +13,48 @@ namespace LoginPageTest
         private DataTable aptDT;
 
         public AppointmentDataTable()
-        {
-            DataSet aptDataSet = new DataSet("AppointmentTimes");
+        { 
+            aptDT = new DataTable();
 
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mohamad\Source\Repos\AshrafTaifour\MedRecs\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
+            string ConnectionString = @"Data Source=|DataDirectory|\MedicalDatabase.mdf";
+            string dir = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string path = (System.IO.Path.GetDirectoryName(dir));
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
+
+            SqlConnection conn = new SqlConnection(ConnectionString + "Integrated Security=True");
             SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date = convert(date, GETUTCDATE()) ORDER BY date ASC;", conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            PatientSearchDataGrid.ItemsSource = dt.DefaultView;
+            sda.Fill(aptDT);
         }
 
-        public AppointmentDataTable(/*Date*/)
+        public AppointmentDataTable(string day)
         {
+            aptDT = new DataTable();
 
+            string ConnectionString = @"Data Source=|DataDirectory|\MedicalDatabase.mdf";
+            string dir = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string path = (System.IO.Path.GetDirectoryName(dir));
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
+
+            SqlConnection conn = new SqlConnection(ConnectionString + "Integrated Security=True");
+            SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date = convert(date, GETUTCDATE()) ORDER BY date ASC;", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(aptDT);
         }
 
-        public AppointmentDataTable(/*StartDay, EndDay*/)
+        public AppointmentDataTable(string start, string finish)
         {
+            aptDT = new DataTable();
 
+            string ConnectionString = @"Data Source=|DataDirectory|\MedicalDatabase.mdf";
+            string dir = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string path = (System.IO.Path.GetDirectoryName(dir));
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
+
+            SqlConnection conn = new SqlConnection(ConnectionString + "Integrated Security=True");
+            SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date = convert(date, GETUTCDATE()) ORDER BY date ASC;", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(aptDT);
         }
     }
 }
