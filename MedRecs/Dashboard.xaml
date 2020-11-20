@@ -20,7 +20,12 @@
         <Button Content="Appointments" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="184" Margin="10,10.333,0,0" Grid.Row="1" Click="AppButton_Click"/>
         <Button Content="Patients" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="184" Margin="10,10.333,0,0" Grid.Row="2" Click="Patients_Click"/>
         <Button Content="Logout" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="184" Margin="12,14.667,0,0" Grid.Row="4" Click="LogOut_Click"/>
-        <DataGrid x:Name="AppointmentsDataGrid" Grid.Column="1" HorizontalAlignment="Left" Height="295" Margin="10,50,0,0" Grid.RowSpan="4" VerticalAlignment="Top" Width="567">
+        <DataGrid x:Name="AppointmentsDataGrid" Grid.Column="1" HorizontalAlignment="Left" Height="295" Margin="10,50,0,0" Grid.RowSpan="4" VerticalAlignment="Top" Width="567" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="App ID" Width="75" Binding="{Binding appid}"/>
+                <DataGridTextColumn Header="Last Name" Width="250" Binding="{Binding lname}"/>
+                <DataGridTextColumn Header="Time" Width="250" Binding="{Binding time}"/>
+            </DataGrid.Columns>
         </DataGrid>
         <Label Content="Today's Appointments" Grid.Column="1" HorizontalAlignment="Left" Height="35" Margin="184,10,0,0" VerticalAlignment="Top" Width="205" FontSize="18" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Height="26" Margin="10,37,0,0" TextWrapping="Wrap" Text="Logged in: " VerticalAlignment="Top" Width="84"/>
