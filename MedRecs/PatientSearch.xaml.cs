@@ -22,6 +22,8 @@ namespace MedRecs
     /// </summary>
     public partial class PatientSearch : Window
     {
+        public string fullname;
+        public string pid;
         //Takes that text and will query the patient table
         public PatientSearch(String patientText)
         {
@@ -34,9 +36,9 @@ namespace MedRecs
             DataRowView selectedRow = (DataRowView)PatientSearchDataGrid.SelectedItems[0];
             string lname = selectedRow.Row.ItemArray[0].ToString();
             string fname = selectedRow.Row.ItemArray[1].ToString();
-            int pid = int.Parse(selectedRow.Row.ItemArray[2].ToString());
-            string fullname = fname + " " + lname;
-
+            pid = selectedRow.Row.ItemArray[2].ToString();
+            fullname = fname + " " + lname;
+            this.Close();
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)

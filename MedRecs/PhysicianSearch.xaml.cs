@@ -21,7 +21,8 @@ namespace MedRecs
     /// </summary>
     public partial class PhysicianSearch : Window
     {
-        //Takes that text and will query the patient table
+        public string lname;
+        public string empid;
         public PhysicianSearch(String physicianText)
         {
             InitializeComponent();
@@ -31,9 +32,9 @@ namespace MedRecs
         private void Select_Click(object sender, RoutedEventArgs e)
         {
             DataRowView selectedRow = (DataRowView)PhysicianSearchDataGrid.SelectedItems[0];
-            string lname = selectedRow.Row.ItemArray[0].ToString();
-            int empid = int.Parse(selectedRow.Row.ItemArray[1].ToString());
-
+            lname = selectedRow.Row.ItemArray[0].ToString();
+            empid = selectedRow.Row.ItemArray[1].ToString();
+            this.Close();
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)

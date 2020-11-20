@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MedRecs"
+        xmlns:local="clr-namespace:MedRecs" xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         mc:Ignorable="d"
         Title="Create New Appointment" Height="269.114" Width="536.261">
     <Grid HorizontalAlignment="Left" Width="526">
@@ -20,15 +20,16 @@
         </Grid.RowDefinitions>
         <Label Content="Patient: " HorizontalAlignment="Left" Height="27" Margin="10,10,0,0" VerticalAlignment="Top" Width="93"/>
         <Label Content="Attending Physician:" HorizontalAlignment="Left" Margin="10,9.667,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="117"/>
-        <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="10,10.333,0,0" Grid.Row="2" VerticalAlignment="Top" Height="25" Width="332"/>
+        <DatePicker SelectedDate="{Binding PropertyName, StringFormat=yyyy-MM-dd}" Name="dateSelector" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10.333,0,0" Grid.Row="2" VerticalAlignment="Top" Height="25" Width="332"/>
         <Label Content="Date:" HorizontalAlignment="Left" Margin="10,8.333,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="37"/>
-        <Label Content="Time:" HorizontalAlignment="Left" Margin="10,10.333,0,0" Grid.Row="3" VerticalAlignment="Top" Height="26" Width="39"/>
+        <Label Content="Time (HH:MM:SS):" HorizontalAlignment="Left" Margin="10,10.333,0,0" Grid.Row="3" VerticalAlignment="Top" Height="26" Width="154"/>
         <Button Content="Create" HorizontalAlignment="Left" Height="29" Margin="85,14.333,0,0" Grid.Row="4" VerticalAlignment="Top" Width="117" Click="CreateButton_Click" Grid.Column="1"/>
         <Button Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="225,14.333,0,0" Grid.Row="4" VerticalAlignment="Top" Width="117" Click="Cancel_Click"/>
         <TextBox Name="patientQuery" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,12,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
         <TextBox Name="physicianQuery" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="10,9.667,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192" Grid.Row="1"/>
         <Button Content="Search" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="217,12,0,0" VerticalAlignment="Top" Width="125" Click="Patient_Click"/>
         <Button Content="Search" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="217,12.667,0,0" VerticalAlignment="Top" Width="125" Click="Physician_Click" Grid.Row="1"/>
-        <Menu Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="10,9.667,0,0" Grid.Row="3" VerticalAlignment="Top" Width="332"/>
+        <TextBox Name="timeBox" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="10,9.333,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="332"/>
+
     </Grid>
 </Window>
