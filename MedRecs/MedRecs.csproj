@@ -74,6 +74,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AppointmentDataTable.cs" />
     <Compile Include="AppointmentSearch.xaml.cs">
       <DependentUpon>AppointmentSearch.xaml</DependentUpon>
     </Compile>
