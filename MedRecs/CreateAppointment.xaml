@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedRecs" xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         mc:Ignorable="d"
-        Title="Create New Appointment" Height="269.114" Width="536.261">
+        Title="Create New Appointment" Height="269.114" Width="536.261" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid HorizontalAlignment="Left" Width="526">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

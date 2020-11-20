@@ -4,7 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Dashboard" Height="461.932" Width="800">
+        Title="Dashboard" Height="461.932" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="106"/>
@@ -33,5 +33,6 @@
         <Label Name="username" Content="" HorizontalAlignment="Left" Height="26" Margin="63,32,0,0" VerticalAlignment="Top" Width="128"/>
         <Label Name="date" Content="" HorizontalAlignment="Left" Height="26" Margin="77,65,0,0" VerticalAlignment="Top" Width="128"/>
         <Button Content="Delete Appointment" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="184" Margin="393,14.667,0,0" Grid.Row="4" Click="Delete_Click" Grid.Column="1"/>
+        <Button Content="Refresh Appointments" Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="10.333,15,0,0" Grid.Row="4" VerticalAlignment="Top" Width="154" Click="Refresh_Click"/>
     </Grid>
 </Window>

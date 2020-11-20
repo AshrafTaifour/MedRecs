@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedRecs"
         mc:Ignorable="d"
-        Title="Patient Manager" Height="180.569" Width="268.728">
+        Title="Patient Manager" Height="180.569" Width="268.728" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button Content="Search Patient" HorizontalAlignment="Left" Height="50" Margin="18,19,0,0" VerticalAlignment="Top" Width="226" Click="Search_Click"/>
         <Button Content="Create New Patient" HorizontalAlignment="Left" Height="50" Margin="18,80,0,0" VerticalAlignment="Top" Width="226" Click="CreatePatient_Click"/>

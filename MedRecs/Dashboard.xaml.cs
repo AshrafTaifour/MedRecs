@@ -104,5 +104,10 @@ namespace MedRecs
             sda.Fill(dt);
             AppointmentsDataGrid.ItemsSource = dt.DefaultView;
         }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            FillDataGrid();
+        }
     }
 }
