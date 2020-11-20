@@ -19,8 +19,11 @@ namespace MedRecs
     /// </summary>
     public partial class AppointmentSearchResults : Window
     {
-        public AppointmentSearchResults()
+        AppointmentDataTable aptDT;
+        
+        public AppointmentSearchResults(AppointmentDataTable adt)
         {
+            aptDT = adt;
             InitializeComponent();
         }
 
