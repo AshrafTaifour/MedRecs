@@ -11,7 +11,7 @@
             <RowDefinition Height="348*"/>
             <RowDefinition Height="73*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="PhysicianSearchDataGrid" HorizontalAlignment="Left" Height="331" VerticalAlignment="Top" Width="773" Margin="10,10,0,0">
+        <DataGrid x:Name="PhysicianSearchDataGrid" HorizontalAlignment="Left" Height="331" VerticalAlignment="Top" Width="773" Margin="10,10,0,0" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Last Name" Width="250" Binding="{Binding lname}"/>
 
