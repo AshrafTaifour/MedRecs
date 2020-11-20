@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace MedRecs
 {
@@ -19,6 +21,8 @@ namespace MedRecs
     /// </summary>
     public partial class AppointmentSearch : Window
     {
+        private AppointmentDataTable aptData;
+
         public AppointmentSearch()
         {
             InitializeComponent();
@@ -34,27 +38,25 @@ namespace MedRecs
             if ((DateBox.SelectedDate == null) && (String.IsNullOrEmpty(patientIDBox.Text)))
             {
                 // Both fields empty, no search
-                MessageBox.Show("Date and Patient ID cannot be blank.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                System.Windows.Forms.MessageBox.Show("Date and Patient ID cannot be blank.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             else if(!(DateBox.SelectedDate == null))
             {
                 // Date is empty, search by PatientID
+                aptData = new AppointmentDataTable(patientIDBox.Text);
             }
             else if (!(String.IsNullOrEmpty(patientIDBox.Text)))
             {
                 // Patient is empty, search by Date
+                aptData = new AppointmentDataTable(DateBox.SelectedDate.Value.ToString("YYYYMMDD"));
             }
             else
             {
                 // Neither Date nor Patient are empty, search by bot Date and PatientID
+                aptData = new AppointmentDataTable();
             }
 
-
-            
-            
-            
-            
             AppointmentSearchResults asr = new AppointmentSearchResults();
             asr.Owner = this;
             asr.ShowDialog();
