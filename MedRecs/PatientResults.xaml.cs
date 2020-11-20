@@ -32,7 +32,6 @@ namespace MedRecs
         {
             DataRowView selectedRow = (DataRowView)PatientResultDataGrid.SelectedItems[0];
             pid = selectedRow.Row.ItemArray[0].ToString();
-            MessageBox.Show(pid);
             string lname = selectedRow.Row.ItemArray[1].ToString();
             string mname = selectedRow.Row.ItemArray[2].ToString();
             string fname = selectedRow.Row.ItemArray[3].ToString();
@@ -51,7 +50,7 @@ namespace MedRecs
         {
             DataRowView selectedRow = (DataRowView)PatientResultDataGrid.SelectedItems[0];
             pid = selectedRow.Row.ItemArray[0].ToString();
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mohamad\source\repos\MedRecs\MedRecs\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ashraf\source\repos\AshrafTaifour\MEDREC-OG\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
             string str_cmd_goes = "DELETE FROM GOES_TO WHERE pid = " + pid;
             string str_cmd_has = "DELETE FROM HAS WHERE pid = " + pid;
             string str_cmd_pat = "DELETE FROM PATIENTS WHERE pid = " + pid;
@@ -74,7 +73,7 @@ namespace MedRecs
 
         private void FillDataGrid()
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mohamad\source\repos\MedRecs\MedRecs\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ashraf\source\repos\AshrafTaifour\MEDREC-OG\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
             string str_cmd = "SELECT pid, lname, mname, fname, hc_num, policy_num, phone_number, p_email FROM patients ORDER BY lname ASC";
             SqlCommand cmd = new SqlCommand(str_cmd, conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
