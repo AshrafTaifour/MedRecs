@@ -31,6 +31,30 @@ namespace MedRecs
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
+            if ((DateBox.SelectedDate == null) && (String.IsNullOrEmpty(patientIDBox.Text)))
+            {
+                // Both fields empty, no search
+                MessageBox.Show("Date and Patient ID cannot be blank.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            else if(!(DateBox.SelectedDate == null))
+            {
+                // Date is empty, search by PatientID
+            }
+            else if (!(String.IsNullOrEmpty(patientIDBox.Text)))
+            {
+                // Patient is empty, search by Date
+            }
+            else
+            {
+                // Neither Date nor Patient are empty, search by bot Date and PatientID
+            }
+
+
+            
+            
+            
+            
             AppointmentSearchResults asr = new AppointmentSearchResults();
             asr.Owner = this;
             asr.ShowDialog();
