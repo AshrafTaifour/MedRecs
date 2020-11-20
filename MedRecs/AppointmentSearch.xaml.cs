@@ -21,7 +21,10 @@ namespace MedRecs
     /// </summary>
     public partial class AppointmentSearch : Window
     {
+        // Attributes unused
         private AppointmentDataTable aptData;
+        private int pid;
+        private string date;
 
         public AppointmentSearch()
         {
@@ -41,25 +44,32 @@ namespace MedRecs
                 System.Windows.Forms.MessageBox.Show("Date and Patient ID cannot be blank.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            else if(!(DateBox.SelectedDate == null))
+            else if (!(DateBox.SelectedDate == null))
             {
                 // Date is empty, search by PatientID
-                aptData = new AppointmentDataTable(int.Parse(patientIDBox.Text));
+                
+                AppointmentSearchResults asr = new AppointmentSearchResults(int.Parse(patientIDBox.Text));
+                asr.Owner = this;
+                asr.ShowDialog();
+
             }
             else if (!(String.IsNullOrEmpty(patientIDBox.Text)))
             {
                 // Patient is empty, search by Date
-                aptData = new AppointmentDataTable(DateBox.SelectedDate.Value.ToString("YYYYMMDD"));
+                
+                AppointmentSearchResults asr = new AppointmentSearchResults(DateBox.SelectedDate.Value.ToString("YYYYMMDD"));
+                asr.Owner = this;
+                asr.ShowDialog();
             }
             else
             {
                 // Neither Date nor Patient are empty, search by bot Date and PatientID
-                aptData = new AppointmentDataTable(DateBox.SelectedDate.Value.ToString("YYYYMMDD"), int.Parse(patientIDBox.Text));
+                
+                AppointmentSearchResults asr = new AppointmentSearchResults(DateBox.SelectedDate.Value.ToString("YYYYMMDD"), int.Parse(patientIDBox.Text));
+                asr.Owner = this;
+                asr.ShowDialog();
             }
-
-            AppointmentSearchResults asr = new AppointmentSearchResults(aptData);
-            asr.Owner = this;
-            asr.ShowDialog();
+            return;
         }
     }
 }
