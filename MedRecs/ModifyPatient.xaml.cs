@@ -50,6 +50,8 @@ namespace MedRecs
             policyNumberBox.Text = policy_num;
             phoneNumberBox.Text = phone_num;
             emailBox.Text = p_email;
+
+            
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -59,11 +61,11 @@ namespace MedRecs
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            updateFields();
             SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ashraf\source\repos\AshrafTaifour\MEDREC-OG\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
-            SqlCommand cmd = new SqlCommand();
+            SqlCommand cmd = new SqlCommand("UPDATE PATIENTS SET lname=@lastname, mname=@middlename, fname=@firstname, hc_num=@regnumber, policy_num=@policynumber, phone_number=@phonenumber, p_email=@email WHERE pid = @pid ", conn);
+            
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "UPDATE PATIENTS SET lname=@lastname, mname=@middlename, fname=@firstname, hc_num=@regnumber, policy_num=@policynumber, phone_number=@phonenumber, p_email=@email WHERE pid = @pid ";
-
             cmd.Parameters.AddWithValue("@lastname", lastname);
             cmd.Parameters.AddWithValue("@middlename", middlename);
             cmd.Parameters.AddWithValue("@firstname", firstname);
@@ -73,14 +75,25 @@ namespace MedRecs
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@pid", patientid);
 
-            cmd.Connection = conn;
-
+ 
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
 
-            MessageBox.Show("Patient Upadate!");
+            MessageBox.Show("Patient Update!");
             this.Close();
+        }
+
+
+        private void updateFields() //updates fields to match what's in the textbox
+        {
+            lastname = lastNameBox.Text.ToString();
+            middlename = middleNameBox.Text.ToString();
+            firstname = firstNameBox.Text.ToString();
+            regnum = registrationNumberBox.Text.ToString();
+            policyNum = policyNumberBox.Text.ToString();
+            phoneNum = phoneNumberBox.Text.ToString();
+            email = emailBox.Text.ToString();
         }
     }
 }
