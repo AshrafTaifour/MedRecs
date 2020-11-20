@@ -68,5 +68,10 @@ namespace MedRecs
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(aptDT);
         }
+
+        public DataTable getAptDT()
+        {
+            return this.aptDT;
+        }
     }
 }

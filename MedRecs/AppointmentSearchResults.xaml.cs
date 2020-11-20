@@ -25,23 +25,31 @@ namespace MedRecs
         {
             aptDT = new AppointmentDataTable(pid);
             InitializeComponent();
+            FillDataGrid();
         }
 
         public AppointmentSearchResults(string date)
         {
             aptDT = new AppointmentDataTable(date);
             InitializeComponent();
+            FillDataGrid();
         }
 
         public AppointmentSearchResults(string date, int pid)
         {
             aptDT = new AppointmentDataTable(date, pid);
             InitializeComponent();
+            FillDataGrid();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void FillDataGrid()
+        {
+            ResultsDataGrid.ItemsSource = aptDT.getAptDT().DefaultView;
         }
     }
 }
