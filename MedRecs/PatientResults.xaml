@@ -11,7 +11,7 @@
             <RowDefinition Height="348*"/>
             <RowDefinition Height="73*"/>
         </Grid.RowDefinitions>
-        <DataGrid HorizontalAlignment="Left" Height="331" VerticalAlignment="Top" Width="773" Margin="10,10,0,0"/>
+        <DataGrid x:Name="PatientResultDataGrid" HorizontalAlignment="Left" Height="331" VerticalAlignment="Top" Width="773" Margin="10,10,0,0"/>
         <Button Content="Cancel" HorizontalAlignment="Left" Height="35" Margin="589,20,0,0" Grid.Row="1" VerticalAlignment="Top" Width="194" Click="Cancel_Click"/>
         <Button Content="Delete" HorizontalAlignment="Left" Height="35" Margin="10,20,0,0" Grid.Row="1" VerticalAlignment="Top" Width="86" Click="Delete_Click"/>
         <Button Content="Modify" HorizontalAlignment="Left" Height="35" Margin="390,20,0,0" Grid.Row="1" VerticalAlignment="Top" Width="194" Click="Modify_Click"/>

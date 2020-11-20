@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace MedRecs
 {
@@ -23,18 +25,29 @@ namespace MedRecs
         public PhysicianSearch(String physicianText)
         {
             InitializeComponent();
-            //Query 
-            //Show in data table: Physicians Name, empID
+            FillDataGrid();
         }
 
         private void Select_Click(object sender, RoutedEventArgs e)
         {
-            //Return the selected empid and name to the CreateAppointment window
+            DataRowView selectedRow = (DataRowView)PhysicianSearchDataGrid.SelectedItems[0];
+            string lname = selectedRow.Row.ItemArray[0].ToString();
+            int empid = int.Parse(selectedRow.Row.ItemArray[1].ToString());
+
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private void FillDataGrid()
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mohamad\source\repos\MedRecs\MedRecs\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
+            SqlCommand cmd = new SqlCommand("SELECT lname, fname, empid FROM healthcare_personnel ORDER BY lname ASC", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            PhysicianSearchDataGrid.ItemsSource = dt.DefaultView;
         }
     }
 }

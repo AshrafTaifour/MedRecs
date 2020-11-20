@@ -88,9 +88,6 @@
     <Compile Include="ModifyPatient.xaml.cs">
       <DependentUpon>ModifyPatient.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PatientManager.xaml.cs">
-      <DependentUpon>PatientManager.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PatientResults.xaml.cs">
       <DependentUpon>PatientResults.xaml</DependentUpon>
     </Compile>
@@ -149,10 +146,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ModifyPatient.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PatientManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

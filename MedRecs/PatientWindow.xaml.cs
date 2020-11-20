@@ -26,7 +26,7 @@ namespace MedRecs
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-            PatientManager pm = new PatientManager();
+            PatientResults pm = new PatientResults();
             pm.Owner = this;
             pm.ShowDialog();
         }
@@ -39,3 +39,4 @@ namespace MedRecs
         }
     }
 }
+
