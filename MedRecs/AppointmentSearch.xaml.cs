@@ -44,7 +44,7 @@ namespace MedRecs
             else if(!(DateBox.SelectedDate == null))
             {
                 // Date is empty, search by PatientID
-                aptData = new AppointmentDataTable(patientIDBox.Text);
+                aptData = new AppointmentDataTable(int.Parse(patientIDBox.Text));
             }
             else if (!(String.IsNullOrEmpty(patientIDBox.Text)))
             {
@@ -54,10 +54,10 @@ namespace MedRecs
             else
             {
                 // Neither Date nor Patient are empty, search by bot Date and PatientID
-                aptData = new AppointmentDataTable();
+                aptData = new AppointmentDataTable(DateBox.SelectedDate.Value.ToString("YYYYMMDD"), int.Parse(patientIDBox.Text));
             }
 
-            AppointmentSearchResults asr = new AppointmentSearchResults();
+            AppointmentSearchResults asr = new AppointmentSearchResults(aptData);
             asr.Owner = this;
             asr.ShowDialog();
         }
