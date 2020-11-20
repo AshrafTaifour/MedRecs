@@ -33,7 +33,7 @@ namespace MedRecs
         {
             DataRowView selectedRow = (DataRowView)PhysicianSearchDataGrid.SelectedItems[0];
             lname = selectedRow.Row.ItemArray[0].ToString();
-            empid = selectedRow.Row.ItemArray[1].ToString();
+            empid = selectedRow.Row.ItemArray[2].ToString();
             this.Close();
         }
 

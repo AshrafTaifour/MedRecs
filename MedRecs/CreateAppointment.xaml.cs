@@ -55,9 +55,9 @@ namespace MedRecs
             cmdAppID.Parameters.AddWithValue("@appdate", date);
             cmdAppID.Parameters.AddWithValue("@apptime", time);
             cmdAppID.Connection = conn;
-            //Executes appointment query and stores app id for next queery 
-            int appid = cmdAppID.ExecuteNonQuery();
-
+            //Executes appointment query and stores appid for next query 
+            string appid = cmdAppID.ExecuteScalar().ToString();
+   
             //links patient to appointment in HAS
             SqlCommand cmdHas = new SqlCommand();
             cmdHas.CommandType = CommandType.Text;
@@ -66,12 +66,13 @@ namespace MedRecs
             cmdHas.Parameters.AddWithValue("@appointID", appid);
             cmdHas.Connection = conn;
 
+            
             //Links healthcare personnel to appointment in ATTENDS
             SqlCommand cmdATT = new SqlCommand();
             cmdATT.CommandType = CommandType.Text;
-            cmdATT.CommandText = "INSERT INTO ATTENDS( appid, empid) VALUES (@appointID, @empployid);";
+            cmdATT.CommandText = "INSERT INTO ATTENDS( appid, empid) VALUES (@appointID, @employid);";
             cmdATT.Parameters.AddWithValue("@appointID", appid);
-            cmdATT.Parameters.AddWithValue("@aemployID", empid);
+            cmdATT.Parameters.AddWithValue("@employID", empid);
             cmdATT.Connection = conn;
 
             //Execute the cmdHAS and cmdATT commands
