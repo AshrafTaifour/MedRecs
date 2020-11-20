@@ -37,7 +37,7 @@ namespace LoginPageTest
             AppDomain.CurrentDomain.SetData("DataDirectory", path);
 
             SqlConnection conn = new SqlConnection(ConnectionString + "Integrated Security=True");
-            SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date = convert(date, GETUTCDATE()) ORDER BY date ASC;", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date = " + day + " ORDER BY date ASC;", conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(aptDT);
         }
