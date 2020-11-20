@@ -44,6 +44,7 @@ namespace MedRecs
             ModifyPatient mp = new ModifyPatient(int.Parse(pid), lname, mname, fname, hc_num, policy_num, phone_num, p_email);
             mp.Owner = this;
             mp.ShowDialog();
+            FillDataGrid();
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
