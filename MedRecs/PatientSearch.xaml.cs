@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace MedRecs
 {
@@ -24,18 +26,29 @@ namespace MedRecs
         public PatientSearch(String patientText)
         {
             InitializeComponent();
+            FillDataGrid();
             //Query 
             //Show in data table: Patient Name, PID, and reg#
         }
 
         private void Select_Click(object sender, RoutedEventArgs e)
         {
-            //Return the selected patient id and name to the CreateAppointment window
+           
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void FillDataGrid()
+        { 
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mohamad\Source\Repos\AshrafTaifour\MedRecs\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
+            SqlCommand cmd = new SqlCommand("SELECT lname, fname, pid FROM patients ORDER BY lname ASC", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            PatientSearchDataGrid.ItemsSource = dt.DefaultView;
         }
     }
 }

@@ -77,6 +77,9 @@
     <Compile Include="AppointmentSearch.xaml.cs">
       <DependentUpon>AppointmentSearch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AppointmentSearchResults.xaml.cs">
+      <DependentUpon>AppointmentSearchResults.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreateNewPatient.xaml.cs">
       <DependentUpon>CreateNewPatient.xaml</DependentUpon>
     </Compile>
@@ -99,6 +102,10 @@
       <DependentUpon>PhysicianSearch.xaml</DependentUpon>
     </Compile>
     <Page Include="AppointmentSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppointmentSearchResults.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

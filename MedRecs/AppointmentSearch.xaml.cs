@@ -31,7 +31,9 @@ namespace MedRecs
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-            //This will lead to a result window
+            AppointmentSearchResults asr = new AppointmentSearchResults();
+            asr.Owner = this;
+            asr.ShowDialog();
         }
     }
 }
