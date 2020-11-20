@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Printing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using LoginPageTest;
+using System.Data.SqlClient;
+using System.Data;
 
 
 namespace MedRecs
@@ -69,6 +72,20 @@ namespace MedRecs
             PatientWindow pw = new PatientWindow();
             pw.Owner = this;
             pw.ShowDialog();
+        }
+
+        private void FillDataGrid()
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MedicalDatabase.mdf;Integrated Security=True");
+            string timeToday = DateTime.Now.ToString();
+            /*FOR TESTING */
+            PrintDialog printDlg = new PrintDialog();
+            Console.WriteLine(timeToday);
+            SqlCommand cmd = new SqlCommand("SELECT PATIENTs.lname, APPOINTMENT.time FROM patients, APPOINTMENTS ORDER BY APPOINTMENT.time ASC", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            AppointmentsDataGrid.ItemsSource = dt.DefaultView;
         }
     }
 }

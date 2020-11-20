@@ -33,7 +33,11 @@ namespace MedRecs
 
         private void Select_Click(object sender, RoutedEventArgs e)
         {
-           
+            DataRowView selectedRow = (DataRowView)PatientSearchDataGrid.SelectedItems[0];
+            string lname = selectedRow.Row.ItemArray[0].ToString();
+            string fname = selectedRow.Row.ItemArray[1].ToString();
+            int pid = int.Parse(selectedRow.Row.ItemArray[2].ToString());
+            string fullname = fname + " " + lname;
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
