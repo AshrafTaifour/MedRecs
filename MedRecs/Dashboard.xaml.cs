@@ -69,7 +69,7 @@ namespace MedRecs
             string appID = selectedRow.Row.ItemArray[0].ToString();
 
             //MAKE SURE THIS HAS THE CORRECT CONNECTION SOURCE.
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mohamad\source\repos\MedRecs\MedRecs\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(ProjectVariables.ConnectionString);
 
             string DELHAS_str = "DELETE FROM HAS WHERE appid = " + appID;
             SqlCommand DELHAS_cmd = new SqlCommand(DELHAS_str, conn);
@@ -97,7 +97,7 @@ namespace MedRecs
 
         private void FillDataGrid()
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mohamad\source\repos\MedRecs\MedRecs\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(ProjectVariables.ConnectionString);
             SqlCommand cmd = new SqlCommand("SELECT  APPOINTMENT.appid, PATIENTS.lname, APPOINTMENT.time from PATIENTS, APPOINTMENT, HAS WHERE date = convert(date, GETUTCDATE()) AND patients.pid = has.pid AND APPOINTMENT.appid = has.appid ORDER BY date ASC", conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

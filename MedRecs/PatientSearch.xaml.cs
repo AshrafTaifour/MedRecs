@@ -48,7 +48,7 @@ namespace MedRecs
 
         private void FillDataGrid()
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mohamad\source\repos\MedRecs\MedRecs\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(ProjectVariables.ConnectionString);
             SqlCommand cmd = new SqlCommand("SELECT lname, fname, pid FROM patients ORDER BY lname ASC", conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

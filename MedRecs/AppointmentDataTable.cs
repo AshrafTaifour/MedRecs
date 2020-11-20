@@ -11,13 +11,13 @@ namespace MedRecs
     class AppointmentDataTable
     {
         private DataTable aptDT;
-        private string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ssbri\source\repos\AshrafTaifour\MedRecs\MedRecs\MedicalDatabase.mdf";
+        private string ConnectionString = ProjectVariables.ConnectionString;
 
         public AppointmentDataTable()
         { 
             aptDT = new DataTable();
          
-            SqlConnection conn = new SqlConnection(ConnectionString + ";Integrated Security=True");
+            SqlConnection conn = new SqlConnection(ConnectionString);
             SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date = convert(date, GETUTCDATE()) ORDER BY date ASC;", conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(aptDT);

@@ -62,7 +62,7 @@ namespace MedRecs
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             updateFields();
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ashraf\source\repos\AshrafTaifour\MEDREC-OG\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(ProjectVariables.ConnectionString);
             SqlCommand cmd = new SqlCommand("UPDATE PATIENTS SET lname=@lastname, mname=@middlename, fname=@firstname, hc_num=@regnumber, policy_num=@policynumber, phone_number=@phonenumber, p_email=@email WHERE pid = @pid ", conn);
             
             cmd.CommandType = CommandType.Text;

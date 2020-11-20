@@ -50,7 +50,7 @@ namespace MedRecs
         {
             DataRowView selectedRow = (DataRowView)PatientResultDataGrid.SelectedItems[0];
             pid = selectedRow.Row.ItemArray[0].ToString();
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ashraf\source\repos\AshrafTaifour\MEDREC-OG\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(ProjectVariables.ConnectionString);
             string str_cmd_goes = "DELETE FROM GOES_TO WHERE pid = " + pid;
             string str_cmd_has = "DELETE FROM HAS WHERE pid = " + pid;
             string str_cmd_pat = "DELETE FROM PATIENTS WHERE pid = " + pid;

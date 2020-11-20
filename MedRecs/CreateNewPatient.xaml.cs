@@ -73,7 +73,7 @@ namespace MedRecs
 
             if (lname != null || fname != null || regNum != null || phoneNum != null)
             {
-                SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mohamad\source\repos\MedRecs\MedRecs\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
+                SqlConnection conn = new SqlConnection(ProjectVariables.ConnectionString);
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "INSERT INTO PATIENTS(lname, mname, fname, hc_num, policy_num, phone_number, p_email) VALUES(@lastname, @middlename, @firstname, @regnumber, @policynumber, @phonenumber, @email)";

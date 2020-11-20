@@ -38,7 +38,7 @@ namespace MedRecs
             
        
             //Create the appointment record
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mohamad\source\repos\MedRecs\MedRecs\MedRecs\MedicalDatabase.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(ProjectVariables.ConnectionString);
             SqlCommand cmdApp = new SqlCommand();
             cmdApp.CommandType = CommandType.Text;
             cmdApp.CommandText = "INSERT INTO APPOINTMENT( date, time) VALUES (@appdate, @apptime);";
