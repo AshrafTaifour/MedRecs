@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace MedRecs
 {
@@ -19,6 +21,11 @@ namespace MedRecs
     /// </summary>
     public partial class AppointmentSearch : Window
     {
+        // Attributes unused
+        private AppointmentDataTable aptData;
+        private int pid;
+        private string date;
+
         public AppointmentSearch()
         {
             InitializeComponent();
@@ -31,9 +38,38 @@ namespace MedRecs
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-            AppointmentSearchResults asr = new AppointmentSearchResults();
-            asr.Owner = this;
-            asr.ShowDialog();
+            if ((DateBox.SelectedDate == null) && (String.IsNullOrEmpty(patientIDBox.Text)))
+            {
+                // Both fields empty, no search
+                System.Windows.Forms.MessageBox.Show("Date and Patient ID cannot be blank.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            else if (!(DateBox.SelectedDate == null))
+            {
+                // Date is empty, search by PatientID
+                
+                AppointmentSearchResults asr = new AppointmentSearchResults(int.Parse(patientIDBox.Text));
+                asr.Owner = this;
+                asr.ShowDialog();
+
+            }
+            else if (!(String.IsNullOrEmpty(patientIDBox.Text)))
+            {
+                // Patient is empty, search by Date
+                
+                AppointmentSearchResults asr = new AppointmentSearchResults(DateBox.SelectedDate.Value.ToString("YYYYMMDD"));
+                asr.Owner = this;
+                asr.ShowDialog();
+            }
+            else
+            {
+                // Neither Date nor Patient are empty, search by bot Date and PatientID
+                
+                AppointmentSearchResults asr = new AppointmentSearchResults(DateBox.SelectedDate.Value.ToString("YYYYMMDD"), int.Parse(patientIDBox.Text));
+                asr.Owner = this;
+                asr.ShowDialog();
+            }
+            return;
         }
     }
 }

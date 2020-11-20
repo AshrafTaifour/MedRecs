@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace LoginPageTest
+namespace MedRecs
 {
     class AppointmentDataTable
     {
@@ -46,6 +46,32 @@ namespace LoginPageTest
             SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date >= \'" + start + "\'and date <= \'" + finish + "\' ORDER BY date ASC;", conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(aptDT);
+        }
+
+        public AppointmentDataTable(int pid)
+        {
+            aptDT = new DataTable();
+
+            SqlConnection conn = new SqlConnection(ConnectionString + ";Integrated Security=True");
+            SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE pid = " + pid.ToString() + "ORDER BY date ASC;", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(aptDT);
+        }
+
+        public AppointmentDataTable(string date, int pid)
+        {
+            // start must be in 'YYYYMMDD' format
+            aptDT = new DataTable();
+
+            SqlConnection conn = new SqlConnection(ConnectionString + ";Integrated Security=True");
+            SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date = \'" + date + "\'and pid = " + pid.ToString() + " ORDER BY date ASC;", conn);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(aptDT);
+        }
+
+        public DataTable getAptDT()
+        {
+            return this.aptDT;
         }
     }
 }

@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Label Content="Date" HorizontalAlignment="Left" Height="36" Margin="10,10,0,0" VerticalAlignment="Top" Width="52"/>
         <Label Content="AND / OR " HorizontalAlignment="Left" Height="32" Margin="147,15.333,0,0" Grid.Row="1" VerticalAlignment="Top" Width="64" RenderTransformOrigin="1.244,0.604"/>
-        <DatePicker Name="DateBox" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="373"/>
+        <DatePicker Name="DateBox" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="373" />
         <Label Content="Patient ID:" HorizontalAlignment="Left" Height="36" Margin="10,10,0,0" VerticalAlignment="Top" Width="188" Grid.Row="2"/>
         <TextBox Name="patientIDBox" HorizontalAlignment="Left" Height="23" Margin="10,40,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="373"/>
         <Button Content="Cancel" HorizontalAlignment="Left" Height="27" Margin="269,92,0,0" Grid.Row="2" VerticalAlignment="Top" Width="114" Click="Cancel_Click"/>
