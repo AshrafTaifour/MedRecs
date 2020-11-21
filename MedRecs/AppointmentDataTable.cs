@@ -18,7 +18,9 @@ namespace MedRecs
             aptDT = new DataTable();
          
             SqlConnection conn = new SqlConnection(ConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date = convert(date, GETUTCDATE()) ORDER BY date ASC;", conn);
+            string queryString = "SELECT PATIENTS.lname, PATIENTS.fname, PATIENTS.phone_number, APPOINTMENT.appid, APPOINTMENT.date, APPOINTMENT.time, HEALTHCARE_PERSONNEL.lname, HEALTHCARE_PERSONNEL.fname FROM((((PATIENTS INNER JOIN HAS ON PATIENTS.pid = HAS.pid) INNER JOIN APPOINTMENT ON HAS.appid = APPOINTMENT.appid) INNER JOIN ATTENDS ON APPOINTMENT.appid = ATTENDS.appid) INNER JOIN HEALTHCARE_PERSONNEL ON ATTENDS.empid = HEALTHCARE_PERSONNEL.empid) WHERE APPOINTMENT.date = convert(date, GETUTCDATE()) ORDER BY APPOINTMENT.date;";
+            // SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date = convert(date, GETUTCDATE()) ORDER BY date ASC;", conn);
+            SqlCommand cmd = new SqlCommand(queryString, conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(aptDT);
         }
@@ -29,21 +31,10 @@ namespace MedRecs
 
             aptDT = new DataTable();
 
-            SqlConnection conn = new SqlConnection(ConnectionString + ";Integrated Security=True");
-            SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date = \'" + day + "\' ORDER BY date ASC;", conn);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            sda.Fill(aptDT);
-        }
-
-        public AppointmentDataTable(string start, string finish)
-        {
-            // start must be in 'YYYYMMDD' format
-            // finish must be in 'YYYYMMDD' format
-
-            aptDT = new DataTable();
-
-            SqlConnection conn = new SqlConnection(ConnectionString + ";Integrated Security=True");
-            SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date >= \'" + start + "\'and date <= \'" + finish + "\' ORDER BY date ASC;", conn);
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            string queryString = "SELECT PATIENTS.lname, PATIENTS.fname, PATIENTS.phone_number, APPOINTMENT.appid, APPOINTMENT.date, APPOINTMENT.time, HEALTHCARE_PERSONNEL.lname, HEALTHCARE_PERSONNEL.fname FROM((((PATIENTS INNER JOIN HAS ON PATIENTS.pid = HAS.pid) INNER JOIN APPOINTMENT ON HAS.appid = APPOINTMENT.appid) INNER JOIN ATTENDS ON APPOINTMENT.appid = ATTENDS.appid) INNER JOIN HEALTHCARE_PERSONNEL ON ATTENDS.empid = HEALTHCARE_PERSONNEL.empid) WHERE APPOINTMENT.date = \'" + day + "\' ORDER BY APPOINTMENT.date;";
+            // SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date = \'" + day + "\' ORDER BY date ASC;", conn);
+            SqlCommand cmd = new SqlCommand(queryString, conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(aptDT);
         }
@@ -52,8 +43,10 @@ namespace MedRecs
         {
             aptDT = new DataTable();
 
-            SqlConnection conn = new SqlConnection(ConnectionString + ";Integrated Security=True");
-            SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE pid = " + pid.ToString() + "ORDER BY date ASC;", conn);
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            string queryString = "SELECT PATIENTS.lname, PATIENTS.fname, PATIENTS.phone_number, APPOINTMENT.appid, APPOINTMENT.date, APPOINTMENT.time, HEALTHCARE_PERSONNEL.lname, HEALTHCARE_PERSONNEL.fname FROM((((PATIENTS INNER JOIN HAS ON PATIENTS.pid = HAS.pid) INNER JOIN APPOINTMENT ON HAS.appid = APPOINTMENT.appid) INNER JOIN ATTENDS ON APPOINTMENT.appid = ATTENDS.appid) INNER JOIN HEALTHCARE_PERSONNEL ON ATTENDS.empid = HEALTHCARE_PERSONNEL.empid) WHERE PATIENTS.pid = " + pid.ToString() + " ORDER BY APPOINTMENT.date;";
+            // SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE pid = " + pid.ToString() + "ORDER BY date ASC;", conn);
+            SqlCommand cmd = new SqlCommand(queryString, conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(aptDT);
         }
@@ -63,8 +56,10 @@ namespace MedRecs
             // start must be in 'YYYYMMDD' format
             aptDT = new DataTable();
 
-            SqlConnection conn = new SqlConnection(ConnectionString + ";Integrated Security=True");
-            SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date = \'" + date + "\'and pid = " + pid.ToString() + " ORDER BY date ASC;", conn);
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            string queryString = "SELECT PATIENTS.lname, PATIENTS.fname, PATIENTS.phone_number, APPOINTMENT.appid, APPOINTMENT.date, APPOINTMENT.time, HEALTHCARE_PERSONNEL.lname, HEALTHCARE_PERSONNEL.fname FROM((((PATIENTS INNER JOIN HAS ON PATIENTS.pid = HAS.pid) INNER JOIN APPOINTMENT ON HAS.appid = APPOINTMENT.appid) INNER JOIN ATTENDS ON APPOINTMENT.appid = ATTENDS.appid) INNER JOIN HEALTHCARE_PERSONNEL ON ATTENDS.empid = HEALTHCARE_PERSONNEL.empid) WHERE APPOINTMENT.date = \'" + date + "\' AND PATIENTS.pid = " + pid.ToString() + " ORDER BY APPOINTMENT.date;";
+            // SqlCommand cmd = new SqlCommand("SELECT * from APPOINTMENT WHERE date = \'" + date + "\'and pid = " + pid.ToString() + " ORDER BY date ASC;", conn);
+            SqlCommand cmd = new SqlCommand(queryString, conn);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(aptDT);
         }

@@ -38,16 +38,16 @@ namespace MedRecs
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-            if ((DateBox.SelectedDate == null) && (String.IsNullOrEmpty(patientIDBox.Text)))
+            if ((!DateBox.SelectedDate.HasValue) && (String.IsNullOrEmpty(patientIDBox.Text)))
             {
                 // Both fields empty, no search
                 System.Windows.Forms.MessageBox.Show("Date and Patient ID cannot be blank.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            else if (!(DateBox.SelectedDate == null))
+            else if (!DateBox.SelectedDate.HasValue)
             {
                 // Date is empty, search by PatientID
-                
+
                 AppointmentSearchResults asr = new AppointmentSearchResults(int.Parse(patientIDBox.Text));
                 asr.Owner = this;
                 asr.ShowDialog();
@@ -56,16 +56,16 @@ namespace MedRecs
             else if ((String.IsNullOrEmpty(patientIDBox.Text)))
             {
                 // Patient is empty, search by Date
-                
-                AppointmentSearchResults asr = new AppointmentSearchResults(DateBox.SelectedDate.Value.ToString("YYYYMMDD"));
+
+                AppointmentSearchResults asr = new AppointmentSearchResults(DateBox.SelectedDate.Value.ToShortDateString());
                 asr.Owner = this;
                 asr.ShowDialog();
             }
             else
             {
                 // Neither Date nor Patient are empty, search by bot Date and PatientID
-                
-                AppointmentSearchResults asr = new AppointmentSearchResults(DateBox.SelectedDate.Value.ToString("YYYYMMDD"), int.Parse(patientIDBox.Text));
+
+                AppointmentSearchResults asr = new AppointmentSearchResults(DateBox.SelectedDate.Value.ToShortDateString(), int.Parse(patientIDBox.Text));
                 asr.Owner = this;
                 asr.ShowDialog();
             }
