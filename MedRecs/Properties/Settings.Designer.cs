@@ -26,11 +26,11 @@ namespace MedRecs.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MedicalDataba" +
-            "se.mdf;Integrated Security=True")]
-        public string MedicalDatabaseConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ssbri\\source\\repos\\A" +
+            "shrafTaifour\\MedRecs\\MedRecs\\MedicalDatabase.mdf;Integrated Security=True")]
+        public string MedicalDatabaseConnection {
             get {
-                return ((string)(this["MedicalDatabaseConnectionString"]));
+                return ((string)(this["MedicalDatabaseConnection"]));
             }
         }
     }
