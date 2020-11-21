@@ -53,7 +53,7 @@ namespace MedRecs
                 asr.ShowDialog();
 
             }
-            else if (!(String.IsNullOrEmpty(patientIDBox.Text)))
+            else if ((String.IsNullOrEmpty(patientIDBox.Text)))
             {
                 // Patient is empty, search by Date
                 

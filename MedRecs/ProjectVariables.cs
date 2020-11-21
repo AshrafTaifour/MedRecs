@@ -8,6 +8,6 @@ namespace MedRecs
 {
     static class ProjectVariables
     {
-         public static string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ssbri\source\repos\AshrafTaifour\MedRecs\MedRecs\MedicalDatabase.mdf;Integrated Security=True";
+         public static string ConnectionString = Properties.Settings.Default.MedicalDatabaseConnection;
     }
 }
