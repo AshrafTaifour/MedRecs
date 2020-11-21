@@ -71,6 +71,9 @@ namespace MedRecs
             //MAKE SURE THIS HAS THE CORRECT CONNECTION SOURCE.
             SqlConnection conn = new SqlConnection(ProjectVariables.ConnectionString);
 
+            string DELATT_str = "DELETE FROM ATTENDS WHERE appid = " + appID;
+            SqlCommand DELATT_cmd = new SqlCommand(DELATT_str, conn);
+
             string DELHAS_str = "DELETE FROM HAS WHERE appid = " + appID;
             SqlCommand DELHAS_cmd = new SqlCommand(DELHAS_str, conn);
 
@@ -78,7 +81,7 @@ namespace MedRecs
             SqlCommand DELAPT_cmd = new SqlCommand(DELAPT_str, conn);
 
             conn.Open();
-
+            DELATT_cmd.ExecuteNonQuery();
             DELHAS_cmd.ExecuteNonQuery();
             DELAPT_cmd.ExecuteNonQuery();
 
